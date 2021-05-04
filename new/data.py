@@ -2,19 +2,19 @@ import yaml
 
 users = [
     {
-        "userid":"userid1",
+        "userid":1,
         "username":"abc",
         "email":"abc@xyz.com",
         "password":"abc@test"
     },
     {
-        "userid":"Userid2",
+        "userid":2,
         "username":"def",
         "email":"def@xyz.com",
         "password":"def@test"
     },
     {
-        "userid":"Userid3",
+        "userid":3,
         "username":"mno",
         "email":"mno@xyz.com",
         "password":"mno@test"
@@ -23,17 +23,17 @@ users = [
 
 advisors = [
     {
-        "id":"Advisorid1",
+        "advid":1,
         "name":"Advisor1",
         "pic":"Advisor1_image"
     },
     {
-        "id":"Advisorid2",
+        "advid":2,
         "name":"Advisor2",
         "pic":"Advisor2_image"
     },
     {
-        "id":"Advisorid3",
+        "advid":3,
         "name":"Advisor3",
         "pic":"Advisor3_image"
     }
@@ -41,20 +41,20 @@ advisors = [
 
 bookings = []
 
-with open("user.yaml", 'w') as userfile:
+with open("new/user.yaml", 'w') as userfile:
     data = yaml.dump(users, userfile)
     print(data)
     print("Write successful")
     userfile.close()
 
-with open("test.yaml", 'w') as advisorfile:
-    data = yaml.dump(test, advisorfile)
+with open("new/test.yaml", 'w') as advisorfile:
+    data = yaml.dump(advisors, advisorfile)
     print(data)
     print("Write successful")
     advisorfile.close()
 
-with open("booking.yaml", 'w') as bookingfile:
-    data = yaml.dump(booking, bookingfile)
+with open("new/booking.yaml", 'w') as bookingfile:
+    data = yaml.dump(bookings, bookingfile)
     print(data)
     print("Write successful")
     bookingfile.close()
