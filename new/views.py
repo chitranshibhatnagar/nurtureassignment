@@ -45,7 +45,6 @@ def register(request):
             else:
                 flag = True
                 break
-        
         if flag:
             return HttpResponse("Bad Request",status=400)
         else:   
@@ -54,7 +53,7 @@ def register(request):
             email = data['email']
             password = data['password']
             userid = len(users) + 1
-            details ={'userid':userid,'username':name,'email':email,'password':password}
+            details ={'userid':userid,'name':name,'email':email,'password':password}
             users.append(details)
             yamlfileloader(users,"user")
             jwt_token = jwttoken(details)
@@ -72,14 +71,13 @@ def login(request):
         data = json.loads(request.body.decode("utf-8"))
         #print(data)
         user = user = yamlfileopener("user")
-        for user in user:
-            if user["username"] == data["username"] and user["password"] == data["password"]:
+        for user in users:
+            if user["email"] == data["email"] and user["password"] == data["password"]:
                 flag = True
                 user_details = user
                 break
             else:
-                flag = False
-                
+                flag = False         
         if flag:
             jwt_token = jwttoken(user_details)
             json_object = json.dumps({"UserID":user_details['userid'],"Token":jwt_token}, indent = 4)
@@ -159,7 +157,6 @@ def get_bookings(request,user_id):
         return HttpResponse(json_object,status=200)
     else:
         return HttpResponse("Bad Request",status=400)
-    
     
 @csrf_exempt
 def add_advisor(request):
