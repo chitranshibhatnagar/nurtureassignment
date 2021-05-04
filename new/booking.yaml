@@ -1,0 +1,36 @@
+-1:
+  Advisor:
+      id: 4
+      name: Advisor4
+      pic: Advisor4_image
+      booking_id: 101
+      booking_time: 2/5/2021 08:12
+    User:
+      email: abc@xyz.com
+      password: abc@test
+      userid: 21
+      username: abc
+- 2:
+    Advisor:
+      id: 2
+      name: Advisor2
+      pic: Advisor2_image
+      booking_id: 102
+      booking_time: 3/5/2021 10:20
+    User:
+      email: def@xyz.com
+      password: def@test
+      userid: 22
+      username: def
+- 3:
+    Advisor:
+      id: 1
+      name: Advisor1
+      pic: Advisor1_image
+      booking_id: 103
+      booking_time: 3/5/2021 13:25
+    User:
+      email: mno@xyz.com
+      password: mno@test
+      userid: 23
+      username: mno
