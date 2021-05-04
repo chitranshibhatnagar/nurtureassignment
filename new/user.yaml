@@ -1,12 +1,16 @@
 - email: abc@xyz.com
+  name: abc
   password: abc@test
   userid: 1
-  username: abc
 - email: def@xyz.com
+  name: def  
   password: def@test
-  userid: 2
-  username: def
+  userid: 2  
 - email: mno@xyz.com
+  name: mno  
   password: mno@test
   userid: 3
-  username: mno
+  email: jkl@xyz.com
+  name: jkl
+  password: jkl@test
+  userid: 4

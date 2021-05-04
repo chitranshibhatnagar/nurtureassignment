@@ -56,7 +56,7 @@ def register(request):
             userid = len(users) + 1
             details ={'userid':userid,'username':name,'email':email,'password':password}
             users.append(details)
-            yamlfileloader(user,"user")
+            yamlfileloader(users,"user")
             jwt_token = jwttoken(details)
             json_object = json.dumps({"UserID":userid,"Token":jwt_token}, indent = 4)  
             #print(json_object) 
