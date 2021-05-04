@@ -49,14 +49,14 @@ def register(request):
         if flag:
             return HttpResponse("Bad Request",status=400)
         else:   
-            users = yamlfileopener("users")
+            users = yamlfileopener("user")
             name = data['name']
             email = data['email']
             password = data['password']
             userid = len(users) + 1
             details ={'userid':userid,'username':name,'email':email,'password':password}
             users.append(details)
-            yamlfileloader(users,"users")
+            yamlfileloader(user,"user")
             jwt_token = jwttoken(details)
             json_object = json.dumps({"UserID":userid,"Token":jwt_token}, indent = 4)  
             #print(json_object) 
@@ -71,7 +71,7 @@ def login(request):
     elif request.method == 'POST':
         data = json.loads(request.body.decode("utf-8"))
         #print(data)
-        users = users = yamlfileopener("users")
+        users = users = yamlfileopener("user")
         for user in users:
             if user["username"] == data["username"] and user["password"] == data["password"]:
                 flag = True
