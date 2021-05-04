@@ -71,8 +71,8 @@ def login(request):
     elif request.method == 'POST':
         data = json.loads(request.body.decode("utf-8"))
         #print(data)
-        users = users = yamlfileopener("user")
-        for user in users:
+        user = user = yamlfileopener("user")
+        for user in user:
             if user["username"] == data["username"] and user["password"] == data["password"]:
                 flag = True
                 user_details = user
